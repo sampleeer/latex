@@ -1,0 +1,229 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{6pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\huge{Павел Нехаенко} \\[4.5pt]
+\normalsize{Ярославль, Россия} \\[6.5pt]
+\href{https://github.com/sampleeer}{\raisebox{-0.05\height}\faGithub\ Github} \ $|$ \ 
+\href{https://www.linkedin.com/in/pavel-nekhaenko-499496254}{\raisebox{-0.05\height}\faLinkedin\ LinkedIn} \ $|$ \ 
+\href{https://pashaprofile.neocities.org}{\raisebox{-0.05\height}\faGlobe \ Profile} \ $|$ \ 
+\href{mailto:p.nekhaenko@yandex.ru}{\raisebox{-0.05\height}\faEnvelope \ p.nekhaenko@yandex.ru} \ $|$ \ 
+\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +7(920)650-79-43} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Образование}
+\textbf{\small Яргу им. П.Г. Демидова}
+\textit{\footnotesize Бакалавриат}& \hfill \small Сентябрь 2021 - Июнь 2025 \\ 
+\textit{ \footnotesize Прикладная математика и информатика} 
+
+%Experience
+\section{Опыт}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf {\small СБЕР} 
+\textit{\footnotesize Data Scientist} & \hfill \footnotesize  Июль 2024 -  \\[1.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+    \setlength\itemsep{0.5em}
+        \item \small Разработка алгоритма анализа временных рядов для прогнозирования длительности стадий сделок с использованием тестов ADF и моделей авторегрессии, повысив точность прогнозов на 12 \%.
+        \item \small Построение ETL-пайплайнов, используя Apache Spark и Greenplum.
+        \item \small Проведение очистки и предобработки данных для последующего обучения.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+
+
+%Projects
+\section{Проекты}
+
+\begin{tabularx}{\linewidth}{  @{}l r@{} }
+ \textbf {\small \href{https://github.com/Lambda-Developement}{Parking Map Application}} & \textit{\footnotesize $\mid$ PHP, Java Script, GLSL, HTML, CSS, Python, Apache Cordova} 
+ \hfill \small  \textcolor{white}{May 2024} \\[1.75pt]
+
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+    \setlength\itemsep{0.5em}
+        \item \small Создали мобильное приложение в команде, используя адаптивную верстку, которая была преобразована в Apache Cordova.
+        \item \small Обучили нейронную сеть AlexNet определять свободные и занятые места.
+        \item \small Нейронная сеть была написана на Keras для анализа видео в реальном времени с видеокамер в городе для трансляции бесплатных парковочных мест.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf {\small \href{https://github.com/sampleeer/POW-Digital_breakthrough_2022}{AI Walrus Recognizer}} & \textit{\footnotesize $\mid$ Python, Jupyter Notebook, LiteSQL, Flutter} 
+\hfill \small  \textcolor{white}{2025} \\[1.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+    \setlength\itemsep{0.5em}
+        \item \smallСоздали кроссплатформенное приложение для обработки фотографий.
+        \item \small Обучили нейронную сеть YOLOv5 на наборе данных для подсчета количества моржей на фотографии.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Награды и победы}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\small Математическая олимпиада Яргу}\\[1.75pt] 
+\textit{\footnotesize \href{https://math.uniyar.ac.ru/news/winner-2020-dean}{Math.uniyar.ru.winner}}  \\[1.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+    \setlength\itemsep{0.5em}
+        \item \small Был награжден дипломом второй степени, который позволил мне учиться в университете по углубленной программе CIS (Center of Integrable Systems).
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\small Leaders of Digital Hackathon ’’Autonomous logistics” победитель}  \\[1.75pt] 
+\textit{\footnotesize \href{https://drive.google.com/file/d/1Ph7rNf6mNehsl9VWehzMnmgnoe7ciOXl/view?usp=sharing}{Leadersofdigital.ru}}  \\[1.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+    \setlength\itemsep{0.5em}
+        \item \small Создали приложение для города Москвы для анализа пробок на дорогах с объединением Google Maps, с внедрением геймификации для удобства пользователей, которое победило среди более чем 300 других участников.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\small Digit Hackathon and Acceleration Program ’’Agronomy” победитель} \\[1.75pt] 
+\textit{\footnotesize \href{https://drive.google.com/file/d/1V5Pg9bvlUpusp6y3rz6BZiyhBOJCoFhx/view?usp=sharing}{Leader-id.ru}}  \\[1.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}
+    \setlength\itemsep{0.5em}
+        \item \small Создали кроссплатформенное приложение, которое позволяет людям создавать виртуальную разметку для домашнего скота, отслеживать геолокацию онлайн и управлять перемещением животных. Также была представлена 3D-модель разработанных ошейников с использованием Arduino и программирования в сети LoRaWAN.
+        \item \small Было получено финансирование для реализации проекта, который ранее был создан на хакатоне.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Технические навыки}
+\textbf {\small Языки:} & \textmd {\small Python, C++, Mathematica, LaTEX}\\[1.75pt]
+%\textbf {\small Developer Tools:} & \textmd {\small VS Code, Jupyter Notebook}\\[1.75pt]
+\textbf {\small Технологии/Фреймворки:} & \textmd {\small Linux, Git, NLTK, HuggingFace, PySpark, NumPy, Pandas, Scikit-learn, Docker, FastAPI, BeautifulSoup, OpenGL, Yolo, GreenPlum}
+
+
+\end{document}
